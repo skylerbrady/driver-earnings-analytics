@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 Earner Metrics Dashboard
 
-## Getting Started
+A production-style **Next.js + React analytics dashboard** that simulates how gig-economy platforms (like Uber) help drivers/couriers track **earnings, trips, and performance metrics**.
 
-First, run the development server:
+Built with a **server-first mindset**, modern **Next.js App Router**, and **Tailwind CSS v4**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- 📊 **Earnings overview** (total earnings, trips, avg per trip)
+- 🌆 **Multi-city support** (Bangalore, Mumbai, Delhi, Hyderabad, Chennai)
+- 📈 **Time-series earnings chart**
+- 🔁 **Dynamic routing** (`/trips/[tripId]`)
+- ⚡ **Route-level loading states**
+- 🌗 **Light / Dark theme toggle (persistent)**
+- 🎨 **Theme-safe styling using CSS variables**
+- 🧠 **Server & Client component separation**
+- 🚀 **Production-grade folder structure**
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **UI:** Tailwind CSS v4
+- **Charts:** Recharts
+- **State:** React hooks
+- **Styling Strategy:** CSS variables + Tailwind utilities
+
+---
+
+## 🗂️ Project Structure
+
+```txt
+src/
+ ├─ app/
+ │   ├─ dashboard/          # Dashboard route
+ │   ├─ trips/              # Trips list + dynamic route
+ │   │   └─ [tripId]/       # Trip details
+ │   ├─ layout.tsx          # Global layout & navigation
+ │   └─ page.tsx            # Redirect to /dashboard
+ ├─ components/
+ │   ├─ Dashboard.tsx
+ │   ├─ EarningsChart.tsx
+ │   ├─ EarningsSummary.tsx
+ │   ├─ Filters.tsx
+ │   └─ ThemeToggle.tsx
+ ├─ data/
+ │   └─ mockData.ts         # Mock earnings data
+ └─ types/
+     └─ index.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🎨 Theme Strategy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Uses CSS variables instead of hardcoded dark colors
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Cards, borders, and text adapt automatically
 
-## Learn More
+Avoids common dark-mode contrast issues
 
-To learn more about Next.js, take a look at the following resources:
+--bg → app background  
+--card → card surfaces  
+--border → borders
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+⚡ Routing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+File-based routing (Next.js App Router)
 
-## Deploy on Vercel
+Dynamic routes:
+/trips/[tripId]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Automatic loading UI using loading.tsx
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No manual router configuration.
+
+▶️ Getting Started
+
+# Install dependencies
+
+npm install
+
+# Run development server
+
+npm run dev
