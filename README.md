@@ -6,6 +6,10 @@ Built with a **server-first mindset**, modern **Next.js App Router**, and **Tail
 
 ---
 
+### Dashboard
+
+![Dashboard](public/dashboard.png)
+
 ## ✨ Features
 
 - 📊 **Earnings overview** (total earnings, trips, avg per trip)
